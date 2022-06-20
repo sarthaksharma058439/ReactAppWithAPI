@@ -2,6 +2,7 @@
 var express = require('express');  
 var app = express();  
 const fs = require('fs');
+const yaml = require('js-yaml');
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -26,7 +27,9 @@ app.get("/getfiledata/:name",function (req,res){
           console.error(err);
           res.send("")
         }
-        res.send(data)
+        let jsn = yaml.load(data);
+        console.log(jsn)
+        res.send(jsn)
       });
       
 })

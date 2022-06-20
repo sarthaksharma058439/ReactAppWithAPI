@@ -17,20 +17,14 @@
 				
 				{
 					"name":"json",
-					"children":[
-						{
-							"name":"config.yml",
-							"children":null,
-							"type":"file"
-						}
-					],
+					"children":[],
 					"type":"folder"
 				},
 				{
 					"name":"jinja",
 					"children":[
 						{
-							"name":"jinjatemplate.html",
+							"name":"template.yaml",
 							"children":null,
 							"type":"file"
 						}
