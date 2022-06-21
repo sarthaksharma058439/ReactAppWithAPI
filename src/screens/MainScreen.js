@@ -34,7 +34,10 @@ export default function MainScreen (){
 						</TreeItem>
 	}
   function createUI(data){
-    if(!data["multiple"]){
+    if(data["type"]=="label"){
+      return <>Filename : {filename}</>
+    }
+    else if(!data["multiple"]){
       console.log(data["type"])
       return <>{createElement(data["type"])}</>
     }
@@ -74,9 +77,6 @@ export default function MainScreen (){
 
               <div className='flex w-2/3 bg-blue-100 h-full justify-center items-center'>
               <div className='flex flex-col justify-around h-full'>
-                <div className='text-lg text-center font-bold'>
-                  {filename}
-                </div>
                 {
                   filedata["root"]?filedata["root"].map((element,idx) => {
                     return createUI(element)
